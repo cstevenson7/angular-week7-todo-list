@@ -1,0 +1,37 @@
+<h1> {{ hello }} </h1>
+
+<button (click)= "displayLanguage()">Display Language Button</button>
+
+<button (click)= "displayEvent($event)">Display Mouse Event</button>
+
+<h1>Angular Directive </h1>
+<h2>*ngFor Directive</h2>
+<p>
+  ngFor Loops over interable objects like arrays and object literals to 
+  display the data that is inside of these objects.</p>
+
+  <!--list of items- createing a varaible called food from the list foods-->
+  <ul *ngFor= "let food of foods; let i = index">
+    <l1>{{ food.item1 }} , {{ i}}</l1>
+  </ul>
+
+  <!-- condtionally displaying data-->
+  <h2>*ngIf Directive</h2>
+  <p> ngIf will conditionally show content on this page assuming that
+    the conditional statement is true
+  </p>
+
+  <h4 *ngIf = "name == 'Joel'">Display User: {{ name }}</h4>
+
+  <div>
+    <h1>TwoWay data binding</h1>
+    <h4> allows info to be changed and displayed at the same time</h4>
+
+
+  <button (click)="increment()">Increase Size</button>
+  <button (click)="decrement()">Decrease Size</button>
+  <label [style.font-size.px]="size"> FontSize: {{ size }} px</label>
+
+  </div>
+
+<router-outlet></router-outlet>

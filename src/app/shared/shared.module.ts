@@ -14,6 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { LayoutModule } from '@angular/cdk/layout';
 import { ShellComponent } from './shell/shell.component';
 import { RouterModule } from '@angular/router';
+import { GoogleSigninDirective } from '../custom-directives/google-signin.directive';
 
 //USE THIS SHORTCUT TO SEE TO MAKE THINGS EASIER  uses the SPREAD operator "..."
 // only for arrays ngModel Below - imports and exports- All these modules are for page styling
@@ -37,9 +38,8 @@ const components= [
 
 
 
-
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, GoogleSigninDirective],
   imports: [
     ...modules
   ],

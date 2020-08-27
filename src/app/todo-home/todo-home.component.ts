@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
-
+import{ TodoCrudService } from '../services/todo-crud.service'
 @Component({
   selector: 'app-todo-home',
   templateUrl: './todo-home.component.html',
   styleUrls: ['./todo-home.component.scss']
 })
 export class TodoHomeComponent implements OnInit {
+
   todoDescriptionDisplay;
   todoNameDisplay;
   todoCategoryDisplay;
@@ -27,12 +28,14 @@ export class TodoHomeComponent implements OnInit {
 
 
   // Form handler for the Reactive Form
+  //using the crud service to send the form data ro the databse
   onSubmit(){
+    this.crudService.create_Todo(this.todoForm.value.todoName, this.todoForm.value.todoDescription, this.todoForm.value.todoCategory)
     console.log(`${this.todoForm.value.todoName}`)
   }
 
 
-  constructor() { }
+  constructor( public crudService: TodoCrudService) { }
 
   ngOnInit(): void {
   }
